@@ -461,11 +461,10 @@ public class Main extends JFrame implements MouseListener
     }
 	
     
-    @SuppressWarnings("deprecation")
 	private void gameend()
     {
     	cleandestinations(destinationlist);
-    	displayTime.disable();
+    	displayTime.setEnabled(false);
     	timer.countdownTimer.stop();
     	if(previous!=null)
     		previous.removePiece();
@@ -493,12 +492,12 @@ public class Main extends JFrame implements MouseListener
 		
 		split.remove(board);
 		split.add(temp);
-		WNewPlayer.enable();
-		BNewPlayer.enable();
-		wselect.enable();
-		bselect.enable();
+		WNewPlayer.setEnabled(true);
+		BNewPlayer.setEnabled(true);
+		wselect.setEnabled(true);
+		bselect.setEnabled(true);
 		end=true;
-		Mainboard.disable();
+		Mainboard.setEnabled(false);
 		Mainboard.dispose();
 		Mainboard = new Main();
 		Mainboard.setVisible(true);
@@ -634,7 +633,6 @@ public class Main extends JFrame implements MouseListener
 	class START implements ActionListener
 	{
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
@@ -646,10 +644,10 @@ public class Main extends JFrame implements MouseListener
 		White.Update_Player();
 		Black.updateGamesPlayed();
 		Black.Update_Player();
-		WNewPlayer.disable();
-		BNewPlayer.disable();
-		wselect.disable();
-		bselect.disable();
+		WNewPlayer.setEnabled(false);
+		BNewPlayer.setEnabled(false);
+		wselect.setEnabled(false);
+		bselect.setEnabled(false);
 		split.remove(temp);
 		split.add(board);
 		showPlayer.remove(timeSlider);
