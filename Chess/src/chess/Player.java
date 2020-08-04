@@ -32,8 +32,8 @@ public class Player implements Serializable{
 	{
 		this.name = name.trim();
 		//this.lname = lname.trim();
-		gamesplayed = new Integer(0);
-		gameswon = new Integer(0);
+		gamesplayed = 0;
+		gameswon = 0;
 	}
 	
 	//Name Getter
@@ -57,7 +57,7 @@ public class Player implements Serializable{
 	//Calculates the win percentage of the player
 	public Integer winpercent()
 	{
-		return new Integer((gameswon*100)/gamesplayed);
+		return (gameswon*100)/gamesplayed;
 	}
 	
 	//Increments the number of games played
